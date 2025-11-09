@@ -74,7 +74,7 @@ Press **Q** to quit the webcam window.
 
 | Input | Output |
 |-------|---------|
-| ![Input](https://postimg.cc/xq5W3BNW) | ![Output](output.png) |
+| ![Input](input.png) | ![Output](output.png) |
 
 *Example Output:*  
 > Detected: **Male, 26 yrs**
