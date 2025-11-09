@@ -93,7 +93,8 @@ Press **Q** to quit the webcam window.
 
 ## 🖼️ Demo Preview
 
-![Demo](https://raw.githubusercontent.com/Dev-AdityaPathania/face-age-gender-detection/main/demo.gif)
+![Demo](https://github.com/Dev-AdityaPathania/face-age-gender-detection/blob/main/demo.gif?raw=true)
+
 
 
 ---
