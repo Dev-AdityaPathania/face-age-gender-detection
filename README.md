@@ -1,150 +1,113 @@
-# 🎯 Gender and Age Detection using Deep Learning
+# 🧠 Face Age & Gender Detection using OpenCV and Deep Learning
 
-![GitHub License](https://img.shields.io/github/license/smahesh29/Gender-and-Age-Detection)
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
-![OpenCV](https://img.shields.io/badge/OpenCV-CV2-orange)
-
----
-
-## 🧠 Objective
-
-To build an **AI-powered age and gender detector** that predicts the **exact age** and **gender** of a person from a single image or webcam feed using deep learning.
+![GitHub repo size](https://img.shields.io/github/repo-size/Dev-AdityaPathania/face-age-gender-detection)
+![GitHub license](https://img.shields.io/github/license/Dev-AdityaPathania/face-age-gender-detection)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![OpenCV](https://img.shields.io/badge/OpenCV-DNN-green)
+![DeepLearning](https://img.shields.io/badge/Model-Caffe-orange)
 
 ---
 
-## 📖 About the Project
+## 🎯 Objective
 
-This project uses a **Convolutional Neural Network (CNN)** to estimate the **gender** (`Male` or `Female`) and **exact age** of a person based on facial features.
-
-The model is built using **OpenCV’s deep learning module (cv2.dnn)** and is trained on the **Adience dataset**.  
-Unlike traditional age group classification (e.g., 0–2, 4–6, etc.), this version predicts the **approximate numeric age**.
-
-> ⚡ This model demonstrates how deep learning can analyze facial patterns to infer demographic attributes.
+To build a **real-time age and gender detector** using OpenCV’s deep learning module (`cv2.dnn`) that can estimate the **approximate age and gender** of a person from an image or webcam stream.
 
 ---
 
-## 📦 Dataset
+## 🧩 About the Project
 
-- Dataset: [Adience Benchmark Dataset](https://www.kaggle.com/ttungl/adience-benchmark-gender-and-age-classification)
-- Contains **26,580 images** of **2,284 subjects**.
-- Includes faces under diverse real-world conditions like **lighting**, **pose**, **makeup**, and **backgrounds**.
-- Collected from **Flickr albums** under the **Creative Commons (CC) license**.
+This project detects **faces**, then predicts **gender (Male/Female)** and **exact age (approximation)** using pre-trained Caffe models.
+
+The models were trained by [Tal Hassner and Gil Levi](https://talhassner.github.io/home/projects/Adience/Adience-data.html) on the **Adience Dataset**, which contains over **26,000 facial images** across multiple age ranges under real-world conditions.
+
+> ⚙️ Prediction is based on probability-weighted averages, providing a near-exact age instead of a fixed range.
 
 ---
 
-## 🛠️ Installation
+## 🧠 Model Files Used
 
-### 1️⃣ Clone the Repository
+| Type | Description | File |
+|------|--------------|------|
+| Face Detection | TensorFlow face detection model | `opencv_face_detector_uint8.pb`, `opencv_face_detector.pbtxt` |
+| Age Detection | Caffe model trained on Adience dataset | `age_net.caffemodel`, `age_deploy.prototxt` |
+| Gender Detection | Caffe model trained on Adience dataset | `gender_net.caffemodel`, `gender_deploy.prototxt` |
 
+---
+
+## ⚙️ Installation
+
+### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/yourusername/Gender-and-Age-Detection.git
-cd Gender-and-Age-Detection
+git clone https://github.com/Dev-AdityaPathania/face-age-gender-detection.git
+cd face-age-gender-detection
 ```
 
-### 2️⃣ Create a Virtual Environment (Recommended)
-
+### 2️⃣ Install dependencies
 ```bash
-python -m venv venv
-venv\Scripts\activate  # (Windows)
-source venv/bin/activate  # (Mac/Linux)
+pip install opencv-python argparse
 ```
 
-### 3️⃣ Install Dependencies
+> Optional: For GPU acceleration, install `opencv-contrib-python` instead.
 
-```bash
-pip install -r requirements.txt
-```
-
-If you don’t have a `requirements.txt`, use:
-
-```bash
-pip install opencv-python argparse numpy
-```
-
----
-
-## 🧩 Project Structure
-
-```
-📂 Gender-and-Age-Detection
- ┣ 📜 detect.py
- ┣ 📜 age_deploy.prototxt
- ┣ 📜 age_net.caffemodel
- ┣ 📜 gender_deploy.prototxt
- ┣ 📜 gender_net.caffemodel
- ┣ 📜 opencv_face_detector.pbtxt
- ┣ 📜 opencv_face_detector_uint8.pb
- ┣ 🖼️ sample1.jpg
- ┣ 🖼️ sample2.jpg
- ┗ 📜 README.md
-```
+### 3️⃣ Ensure model files exist
+Make sure all `.pb`, `.pbtxt`, `.prototxt`, and `.caffemodel` files are in the same directory as `detect.py`.
 
 ---
 
 ## 🚀 Usage
 
-### 🖼️ Detect Gender and Age from Image
-
+### 📸 Detect Age & Gender from Image
 ```bash
 python detect.py --image your_image.jpg
 ```
 
-> The image should be in the same folder as your `detect.py` file.
-
-### 🎥 Detect Gender and Age in Real-Time (Webcam)
-
+### 🎥 Real-time Webcam Detection
 ```bash
 python detect.py
 ```
 
-Press `Ctrl + C` to stop execution.
+Press **Q** to quit the webcam window.
 
 ---
 
-## ⚙️ Model Details
+## 🧍‍♂️ Sample Output
 
-| Model File | Description |
-|-------------|-------------|
-| `opencv_face_detector_uint8.pb` | Pre-trained TensorFlow model for face detection |
-| `opencv_face_detector.pbtxt` | Configuration file for the face detector |
-| `age_deploy.prototxt` | Model architecture for age estimation |
-| `age_net.caffemodel` | Trained model weights for age estimation |
-| `gender_deploy.prototxt` | Model architecture for gender classification |
-| `gender_net.caffemodel` | Trained model weights for gender classification |
+| Input | Output |
+|-------|---------|
+| ![Input](demo_input.jpg) | ![Output](demo_output.jpg) |
+
+*Example Output:*  
+> Detected: **Male, 26 yrs**
 
 ---
 
-## 🧑‍💻 Example Output
+## 🧪 Features
 
-| Input Image | Output |
-|--------------|---------|
-| 🧒 `person1.jpg` | 👦 Male, Age: 21 |
-| 👩 `person2.jpg` | 👩 Female, Age: 34 |
-
----
-
-## 🧰 Dependencies
-
-- Python 3.8+
-- OpenCV
-- NumPy
-- argparse
+✅ Real-time detection using webcam  
+✅ Exact age approximation (not age groups)  
+✅ Pre-trained DNN models  
+✅ Smooth frame processing every 1 second  
+✅ Written in clean, modular Python  
 
 ---
 
-## 📜 License
+## 🖼️ Demo Preview
 
-This project is licensed under the [MIT License](LICENSE).
-
----
-
-## 💡 Author
-
-**Aditya Singh Pathania**  
-📧 [GitHub Profile](https://github.com/AdityaSinghPathania)  
-🧑‍💻 Pursuing B.Tech CSE | Passionate about Deep Learning and AI Vision Systems
+![Demo](demo.gif)
 
 ---
 
-⭐ If you like this project, consider giving it a star on GitHub!
+## 🧾 License
+
+This project is licensed under the **MIT License** — feel free to use and modify with attribution.
+
+---
+
+## 👨‍💻 Author
+
+**Aditya Pathania**  
+📍 GitHub: [@Dev-AdityaPathania](https://github.com/Dev-AdityaPathania)
+
+> Made with ❤️ using Python and OpenCV.
+
 
