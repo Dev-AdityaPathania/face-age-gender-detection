@@ -77,7 +77,7 @@ Press **Q** to quit the webcam window.
 | <img src="input.jpg" width="300"/> | <img src="output.jpg" width="300"/> |
 
 *Example Output:*  
-> Detected: **Male, 26 yrs**
+> Detected: **Male, 18 yrs**
 
 ---
 
