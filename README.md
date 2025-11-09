@@ -1,16 +1,12 @@
 # 🧠 Face Age & Gender Detection using OpenCV and Deep Learning
 
-<p align="center">
-  <img src="https://img.shields.io/github/repo-size/Dev-AdityaPathania/face-age-gender-detection"/>
-  <img src="https://img.shields.io/github/license/Dev-AdityaPathania/face-age-gender-detection"/>
-  <img src="https://img.shields.io/badge/Python-3.10%2B-blue"/>
-  <img src="https://img.shields.io/badge/OpenCV-DNN-green"/>
-  <img src="https://img.shields.io/badge/Model-Caffe-orange"/>
-</p>
+![GitHub repo size](https://img.shields.io/github/repo-size/Dev-AdityaPathania/face-age-gender-detection)
+![GitHub license](https://img.shields.io/github/license/Dev-AdityaPathania/face-age-gender-detection)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![OpenCV](https://img.shields.io/badge/OpenCV-DNN-green)
+![DeepLearning](https://img.shields.io/badge/Model-Caffe-orange)
 
 ---
-
-<div align="center">
 
 ## 🎯 Objective
 
@@ -97,9 +93,9 @@ Press **Q** to quit the webcam window.
 
 ## 🖼️ Demo Preview
 
-<p align="center">
-  <img src="https://github.com/Dev-AdityaPathania/face-age-gender-detection/blob/main/demo.gif?raw=true" width="600" alt="Demo Preview">
-</p>
+![Demo](https://github.com/Dev-AdityaPathania/face-age-gender-detection/blob/main/demo.gif?raw=true)
+
+
 
 ---
 
@@ -114,8 +110,4 @@ This project is licensed under the **MIT License** — feel free to use and modi
 **Aditya Pathania**  
 📍 GitHub: [@Dev-AdityaPathania](https://github.com/Dev-AdityaPathania)
 
-> Made with ❤️ using Python and OpenCV.
-
-</div>
-
-
+> Made with ❤️ using Python and OpenCV.   everything in cnter
